@@ -51,13 +51,15 @@ public class App
         //input order amount
         System.out.print("What is the order amount? ");
         double amount =  number1.nextInt();
+
+        // save original amount as separate variable
         double originalAmount = amount;
 
         //input state
         System.out.print("What state do you live in? ");
         String state =  string1.nextLine();
 
-
+        // calculates tax for wisconsin
         if (state.equals("Wisconsin")) {
 
             // input county
@@ -66,6 +68,7 @@ public class App
 
             amount = amount * (1 + 0.05);
 
+            // calculates county tax
             if (county.equals("Dunn")) {
                 amount = amount * (1 + 0.005);
             }
@@ -76,6 +79,7 @@ public class App
 
         }
 
+        // calculates tax for illinois
         if (state.equals("Illinois")) {
 
             amount = amount * (1 + 0.08);
